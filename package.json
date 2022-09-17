@@ -9,12 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
+    "@chakra-ui/react": "^2.3.2",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "ethers": "^5.7.1",
+    "framer-motion": "^6.5.1",
     "next": "12.3.0",
-    "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "tslib": "^2.3.1",
+    "wagmi": "^0.6.6",
+    "web3": "^1.5.0"
   },
   "devDependencies": {
+    "@rarible/sdk": "^0.9.29-hotfix.0",
     "autoprefixer": "^10.4.11",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
