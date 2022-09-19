@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Image from 'next/image';
 import {
   Box,
   Flex,
@@ -40,12 +41,15 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box className='bg-gray-50' px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           
+            <Box className='pl-4'>
+              <Image src="/logo.svg" alt="logo" width={125} height={37} layout="fixed" />
+            </Box>
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
             <HStack
+            className='flex flex-col mt-4 font-medium lg:flex-row  lg:mt-0'
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
@@ -75,8 +79,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }

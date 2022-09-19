@@ -4,6 +4,7 @@
 
 @layer components {
     /* Navbar Component */
+  
   .navbar {
     @apply 
     bg-gray-50 
@@ -29,4 +30,17 @@
     focus:outline-none dark:focus:ring-primary-800;
   }
   /* Navbar Component */
+  .main-bg{
+    @apply 
+    absolute 
+    w-auto 
+    bg-cover
+    bg-center
+    bg-no-repeat
+    min-w-full 
+    min-h-full 
+    h-screen 
+    max-w-none 
+    opacity-100;
+  }
 }
