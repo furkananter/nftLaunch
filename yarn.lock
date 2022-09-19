@@ -3160,9 +3160,9 @@
   dependencies:
     "glob" "7.1.7"
 
-"@next/swc-win32-x64-msvc@12.3.0":
-  "integrity" "sha512-C/nw6OgQpEULWqs+wgMHXGvlJLguPRFFGqR2TAqWBerQ8J+Sg3z1ZTqwelkSi4FoqStGuZ2UdFHIDN1ySmR1xA=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.3.0.tgz"
+"@next/swc-darwin-arm64@12.3.0":
+  "integrity" "sha512-9s4d3Mhii+WFce8o8Jok7WC3Bawkr9wEUU++SJRptjU1L5tsfYJMrSYCACHLhZujziNDLyExe4Hwwsccps1sfg=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.3.0.tgz"
   "version" "12.3.0"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -7804,6 +7804,11 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fsevents@^2.1.2", "fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
+
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -12401,6 +12406,11 @@
   "integrity" "sha512-6dOYeZfS3O9RtRD1caom0sMxgK59b27+IwoNy8RDPsmslSGOyU+mpTamlaIW7aNKi90ZQZ9DFaZL3YRoiSCULQ=="
   "resolved" "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-4.0.0.tgz"
   "version" "4.0.0"
+
+"typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
+  "integrity" "sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.3.tgz"
+  "version" "4.8.3"
 
 "uglify-es@^3.1.9":
   "integrity" "sha512-r+MU0rfv4L/0eeW3xZrd16t4NZfK8Ld4SWVglYBb7ez5uXFWHuVRs6xCTrf1yirs9a4j4Y27nn7SRfO6v67XsQ=="
