@@ -4,26 +4,22 @@ import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react'
 
 
-async function fetchCollectionNFT(id) {
-  let nftsArray = null;
-  await fetch(
-    `https://api.opensea.io/api/v1/asset/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/${id}/?include_orders=false`,
-    {method: "GET"}
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      nftsArray = data;
-      return nftsArray;
-    })
-    .catch((err) => console.error(err));
+// 1. Handle the Wallet Connection 
+  // use 
+// 2. Fetch the NFTs from the collection
+// 3. Display the NFTs in the dashboard
+
+function fetchData(id){
+  fetch(`https://api.opensea.io/api/v1/`)
+  .then((response) => response.json())
+  .then((data) => console.log(data))
 }
 
 const Dashboard = () => { 
   return (
     <div >
-      <button onClick={() => fetchCollectionNFT(4)}> Fetch Data</button>
-       <Image width={100} height={100} alt="crypto-punk" src={JSON.stringify(nftsArray?.image_preview_url)} />
-      <p>{JSON.stringify(nftsArray)}</p>
+      <button onClick={() => fetchData(4)}> Fetch Data</button>
+       <p></p>
     </div>
   )
 }
