@@ -68,9 +68,7 @@ const Dashboard = () => {
     <>
       <nav>
         <div className="flex justify-start lg:w-0 lg:flex-1">
-          <Link href="/">
-            <a>
-            <span className="sr-only">NFT Launch Kit</span>
+            <Link href='/'>
             <Image
               className="h-8 w-auto sm:h-10"
               src="/logo.svg"
@@ -78,8 +76,7 @@ const Dashboard = () => {
               height={38}
               alt="Home"
             />
-            </a>
-          </Link>
+            </Link>
         </div>
       </nav>
       {isConnected &&
