@@ -19,12 +19,9 @@ function NftElement({ item }) {
             alt={item.id}
           />
         </Link>
-        <div className='absolute bottom-5 md:bottom-2 md:right-4'>
-        <p className='p-1 bg-white backdrop-blur-md rounded-md text-white bg-opacity-20'>
-          #{item.id}
-        </p >
-        </div>
-        
+        <p className='absolute bottom-2 p-1 bg-white backdrop-blur-md rounded-md text-white bg-opacity-20'>
+          Crypto Punk #{item.id}
+        </p>
       </div>
     </div>
   );

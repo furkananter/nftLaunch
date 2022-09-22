@@ -1,7 +1,8 @@
 import { ConnectKitButton } from 'connectkit'
 import { useAccount, useDisconnect } from 'wagmi'
 import { useState, useEffect } from 'react'
-
+import Image from 'next/image'
+import Link from 'next/link'
 import NFTElement from './components/NFTElement'
 import { ArrowPathIcon, HeartIcon } from '@heroicons/react/24/outline'
 
@@ -12,25 +13,23 @@ import { ArrowPathIcon, HeartIcon } from '@heroicons/react/24/outline'
 // 2. Fetch the NFTs from the collection
 // 3. Display the NFTs in the dashboard
 
-async function getNftData(id){
-  const option = {method: 'GET'}
-  let nftData = null;
+async function getNftData(id) {
+  const option = { method: 'GET' }
   return await fetch(`https://api.opensea.io/api/v1/asset/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/${id}/?include_orders=false`, option)
-  .then(res => res.json())
-  .then(data => {
-    nftData = data
-    return nftData
-  })
-  .catch(err => {console.log(err)})
+    .then(res => res.json())
+    .then(data => {
+      return data
+    })
+    .catch(err => { console.log(err) })
 }
 
 
 const Dashboard = () => {
   // Wallet Connection Hooks 👇
   // useAccount() returns the connected wallet address
-  const { isConnected, address, isDisconnected } = useAccount()
-   // Wallet Connection status Component State Variables
-   const [walletConnection, setWalletConnection] = useState(false);
+  const { isConnected, address } = useAccount()
+  // Wallet Connection status Component State Variables
+  const [walletConnection, setWalletConnection] = useState(false);
   // useDisconnect for disconnecting the wallet
   const { disconnect } = useDisconnect()
   // Wallet Connection Hooks 👆
@@ -43,11 +42,11 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false)
   // NFTs Hooks 👆
 
-  
-  async function fetchNftsData(){
+
+  async function fetchNftsData() {
     setLoading(true)
     let nfts = []
-    for(let i = 1; i <= 30; i++){ 
+    for (let i = 1; i <= 30; i++) {
       const nft = await getNftData(i)
       setLoading(false)
       nfts.push(nft)
@@ -55,16 +54,35 @@ const Dashboard = () => {
     setNftsArray(nfts)
   }
 
-useEffect(() => {
-  fetchNftsData()
+  useEffect(() => {
+    fetchNftsData()
 
-  {isConnected 
-    ? setWalletConnection(true)
-    : setWalletConnection(false)}
-}, [isConnected])
+    {
+      isConnected
+        ? setWalletConnection(true)
+        : setWalletConnection(false)
+    }
+  }, [isConnected])
 
   return (
     <>
+      <nav>
+        <div className="flex justify-start lg:w-0 lg:flex-1">
+          <Link href="/">
+            <a>
+            <span className="sr-only">NFT Launch Kit</span>
+            <Image
+              className="h-8 w-auto sm:h-10"
+              src="/logo.svg"
+              width={125}
+              height={38}
+              alt="Home"
+            />
+            </a>
+          </Link>
+        </div>
+
+      </nav>
       {isConnected &&
         <div>
           <span>
@@ -78,7 +96,7 @@ useEffect(() => {
         <ConnectKitButton />
       }
       {loading && <ArrowPathIcon className="animate-spin h-5 w-5 text-gray-500" />}
-      {walletConnection && 
+      {walletConnection &&
         <div className="grid grid-cols-1 gap-6 items-center justify-center place-content-center sm:grid-cols-2 lg:grid-cols-4">
           {nftsArray.map((item) => (
             <NFTElement key={item.id} item={item} />
@@ -87,43 +105,9 @@ useEffect(() => {
       }
 
 
-      
+
     </>
   )
 }
 
 export default Dashboard
-
-
-      {/* {nftsArray?.map((item) => {
-            return <NFTElement key={"NFT " + item.id} item={item} />;
-          })} */}
-{/*
-`https://api.opensea.io/api/v1/asset/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/${id}/?include_orders=false`,
-
-useEffect(() => {
-    if (isConnected == true) {
-      setIsWalletConnected(true)
-      async function fetchNFTs(id) {
-        const options = { method: 'GET' };
-        await fetch(`https://api.opensea.io/api/v1/asset/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/${id}/?include_orders=false`, options)
-          .then(response => response.json())
-          .then(response => {
-            setNftsArray(response)
-            console.log(nftsArray)
-          })
-          .catch(err => console.error(err));
-      }
-      function fetchNFTDatas() {
-        let nullNftArray = []
-        for (let i = 0; i < 12; i++) {
-          const nftElements = fetchNFTs(i)
-          nullNftArray.push(nftElements)
-        }
-        setNftsArray(nullNft)
-      }
-
-    };
-  }, [isConnected]);
-
-*/}
