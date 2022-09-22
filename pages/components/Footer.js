@@ -1,20 +1,20 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
 // this component is a footer
 
   return (
-    <footer className="">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+    <footer className="justify-center md:justify-end items-center p-2 flex">
+        <Link
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <span className="">
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <span className='cursor-pointer'>
+            <Image src="/logo.svg" alt="Vercel Logo" width={80} height={20} />
           </span>
-        </a>
+        </Link>
       </footer>
   )
 }

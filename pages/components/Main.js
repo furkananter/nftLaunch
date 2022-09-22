@@ -1,6 +1,8 @@
 
-import { Image } from '@chakra-ui/react'
+import Image  from 'next/image'
 import Link from 'next/link'
+
+// Main Component for the Home Page
 
 const Main = () => {
   return (
@@ -25,8 +27,8 @@ const Main = () => {
           </div>
         </section>
       </section>
-      <div className='main-bg absolute w-auto bg-contain max-w-none opacity-20'>
-        <Image src="/bg-image.webp" className='sm:bg-contain' alt="hero" />
+      <div className='main-bg '>
+        <Image width={300} height={300} layout="responsive" src="/bg-image.webp"  alt="hero" />
       </div>
     </header>
   )

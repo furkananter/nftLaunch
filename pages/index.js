@@ -5,14 +5,15 @@ import Navbar from './components/Navbar'
 import Main from './components/Main'
 import Footer from './components/Footer'
 
+// Index Page Component
 
 export default function Home() {
   return (
-    <div>
+    <>
       <IndexPage />
       <Navbar />
       <Main />
       <Footer />
-    </div>
+    </>
   )
 }
