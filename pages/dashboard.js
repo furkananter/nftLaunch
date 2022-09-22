@@ -81,7 +81,6 @@ const Dashboard = () => {
             </a>
           </Link>
         </div>
-
       </nav>
       {isConnected &&
         <div>
