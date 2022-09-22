@@ -1,10 +1,10 @@
-import { ConnectKitButton } from 'connectkit'
+import { ConnectKitButton, address } from 'connectkit'
 import { useAccount, useDisconnect } from 'wagmi'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import NFTElement from './components/NFTElement'
-import { ArrowPathIcon, HeartIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon} from '@heroicons/react/24/outline'
 
 
 
@@ -27,7 +27,7 @@ async function getNftData(id) {
 const Dashboard = () => {
   // Wallet Connection Hooks 👇
   // useAccount() returns the connected wallet address
-  const { isConnected, address } = useAccount()
+  const { isConnected } = useAccount()
   // Wallet Connection status Component State Variables
   const [walletConnection, setWalletConnection] = useState(false);
   // useDisconnect for disconnecting the wallet
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <nav>
+      <nav className='   '>
         <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href='/'>
             <Image
@@ -75,13 +75,13 @@ const Dashboard = () => {
               width={125}
               height={38}
               alt="Home"
-            />
-            </Link>
+              />
+              </Link>
         </div>
       </nav>
       {isConnected &&
         <div>
-          <span>
+          <span className='text-red-500'>
             Connected to with address {address}
           </span>
           <hr />
